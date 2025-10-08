@@ -16,8 +16,8 @@ jobs:
 
       - name: Commit et push
         run: |
-          git config --global user.name "TON_NOM_UTILISATEUR_GITHUB"
-          git config --global user.email "TON_EMAIL_GITHUB"
+          git config --global user.name "Fourios-librahost"
+          git config --global user.email "theo.poret05@gmail.com"
           git add rapport.txt
           git commit -m "Mise à jour du rapport automatique"
           git push
