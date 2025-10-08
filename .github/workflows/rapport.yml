@@ -1,0 +1,23 @@
+name: Rapport automatique
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  test-and-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Création du rapport
+        run: date > rapport.txt
+
+      - name: Commit et push
+        run: |
+          git config --global user.name "TON_NOM_UTILISATEUR_GITHUB"
+          git config --global user.email "TON_EMAIL_GITHUB"
+          git add rapport.txt
+          git commit -m "Mise à jour du rapport automatique"
+          git push
